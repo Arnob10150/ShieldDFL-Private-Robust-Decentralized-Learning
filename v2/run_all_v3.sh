@@ -8,6 +8,7 @@
 # and is skipped on restart. Worker count is held at 8: each PyTorch process commits
 # about 1.3 GB, and 12 of them exhausted the Windows paging file.
 cd "$(dirname "$0")/.."
+mkdir -p v2/results
 export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 LOG=v2/results/progress_v3.log
 for g in main poison ablation breaking privacy scale nodes; do

@@ -4,6 +4,7 @@
 # sweep to finish and then re-runs every grid once; completed cells are skipped, so it only
 # executes what is genuinely missing (the adaptive_dist poisoning cells, in particular).
 cd "$(dirname "$0")/.."
+mkdir -p v2/results
 export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 LOG=v2/results/progress_v3.log
 

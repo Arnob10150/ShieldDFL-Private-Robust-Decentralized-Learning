@@ -1,0 +1,47 @@
+project:
+  name: ShieldDFL
+  seed: 42
+data:
+  zip_path: ../CICDDoS2019.zip
+  sample_size: 16000
+  test_size: 0.25
+  validation_size: 0.20
+clients:
+  num_clients: 10
+  split_type: dirichlet
+  dirichlet_alpha: 0.5
+model:
+  hidden_dims: [128, 64]
+  embedding_dim: 32
+  dropout: 0.20
+training:
+  rounds: 12
+  local_epochs: 1
+  centralized_epochs: 12
+  batch_size: 256
+  lr: 0.001
+  weight_decay: 0.0001
+federation:
+  topology: random_gossip
+  neighbors_per_round: 9
+  trust_threshold: 0.0
+  self_trust_weight: 1.0
+  min_peer_trust_weight: 1.0
+  sample_weighted_gossip: false
+  adaptive_threshold: true
+  shield_local_epochs: 2
+  fedprox_mu: 0.01
+privacy:
+  delta: 1.0e-5
+  max_grad_norm: 1.0
+  epsilon_grid: [1, 2, 4, 8]
+  noise_by_epsilon:
+    "1": 0.45
+    "2": 0.32
+    "4": 0.22
+    "8": 0.12
+attacks:
+  malicious_ratios: [0.0, 0.05, 0.10, 0.20, 0.30]
+  attack_type: mixed
+logging:
+  output_dir: results

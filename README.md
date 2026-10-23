@@ -17,10 +17,10 @@ Decentralized Federated Learning Framework for Privacy-Preserving DDoS Detection
 The data and generated result files are not included. The pilot expects the dataset archive
 and results directory paths specified by its configuration.
 
-From the `ShieldDFL` project directory, run the pilot with:
+From this repository's root, run the pilot with:
 
 ```powershell
-python framework_code/experiments/run_pilot.py --config framework_code/configs/paper_pilot.yaml
+python experiments/run_pilot.py --config configs/paper_pilot.yaml
 ```
 
 The original project entry points remain in the parent directory; this folder is a clean

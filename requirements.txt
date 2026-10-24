@@ -1,0 +1,6 @@
+torch==2.7.1
+opacus==1.6.0
+numpy
+pandas
+scikit-learn
+scipy
